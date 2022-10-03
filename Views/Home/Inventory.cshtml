@@ -1,0 +1,24 @@
+@using Cars 
+@model Cars
+
+@* Namespace, then Object *@
+
+@{
+    var imgSrc = "";
+    @* ViewData["Layout"] = "NewLayout9"; *@
+}
+
+<div class="inventory"> 
+    <div class="inventory-header">
+    
+    </div>
+    <div class="inventory-content">
+        @foreach (Car car in Model.CarListing)
+        {
+            @* Weird Magic about to happen; <text> is keyword to go back to HTML *@
+            <text>
+                @Html.Partial("_Car", car)
+            </text>
+        }
+    </div>
+</div>

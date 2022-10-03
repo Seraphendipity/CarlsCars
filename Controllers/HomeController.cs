@@ -1,14 +1,9 @@
-﻿using CarlsCars.Models;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using CarlsCars.Models;
 
-namespace CarlsCars.Controllers
-{
+namespace Cars {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,10 +23,17 @@ namespace CarlsCars.Controllers
             return View();
         }
 
+        public ActionResult Inventory() {
+            Cars model = CarsService.GetAllCars();
+            return View(model); // Implicit View("Inventory") as well due to same name.
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
 }

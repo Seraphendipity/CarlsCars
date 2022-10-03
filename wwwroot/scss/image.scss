@@ -1,0 +1,20 @@
+@import 'modalWindow';  
+@import 'flipper';    
+/*________________________________________
+_ _  _ ____ ____ ____
+| |\/| |__| | __ |___
+| |  | |  | |__] |___
+________________________________________*/
+
+
+/* IMAGE FLIP STYLING */
+.imgBlock {
+    display: block;
+    float: left;
+    width: 45%;
+    margin: 1%;
+    position: relative;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+  

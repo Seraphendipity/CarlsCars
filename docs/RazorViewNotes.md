@@ -1,0 +1,21 @@
+## Razor View Notes
+
+- Minimally Viable Product (MVP)
+  - Start with the most basic product
+  - Don't do async
+  - KISS: Keep It Simple Stupid
+- Why not use just list?
+  - Creating Model as the List may change, keep dynamic
+- Directives
+- 3 Types of Razor Views
+  - Partials
+    - Can be nested infinitely
+    - Used as mini-element templates to be used
+    - Partials instead of Functions in HTML
+  - Layouts
+    - Can be changed with `ViewData[""] = "";`
+    - The "buns" of the sandwich, always encompasses other views.
+  - View
+    - Complete page, linked from Controller action
+  - Editor Templates
+    - Functionally partials, but posts data back to the servers

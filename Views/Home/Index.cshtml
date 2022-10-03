@@ -1,8 +1,60 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var imgSource = "/images/car.jpg";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@functions {
+
+    @* public CreateListingElement(  imgData,  groupId = 0,  figClasses = '' ) {
+    //Group ID <= -1: decorative image, non-modal
+    //Group ID == 0: no meaningful group
+    //Group ID >=  1: Group with all images of that number.
+    //All extra pararms are extra classes to add.
+
+    var result = ;
+    var bSemanticImg = true;
+    var classes = ''; 
+    classes = "modalElementMain flipperFrontContent btnEditMw imgCentered";
+    classes += ($groupId >= 1) ? ' modalGroup' : '';
+
+    if( (imgData !== false) && (imgData['bActive'] == 1) ) {
+        src = ($"/images/{imgData}";
+        result = "<input type=\"image\" src=\"{imgData}\" ";
+    }
+    return result; 
+}
+    *@
+
+    
+}
+
+
+@* <div class="modalWindow">
+    <div class="centeredBox">
+        
+        <div class="modalWindowMain">
+            <img class="modalWindowMainImg" src=@imgSource />
+            <button class="modalWindowBtn modalWindowBtnExt">
+                <i class="glyphicon glyphicon-remove"></i></button>
+            <button class="modalWindowBtn modalWindowBtnDir modalWindowBtnBck">
+                <i class="glyphicon glyphicon-menu-left"></i></button>
+            <button class="modalWindowBtn modalWindowBtnDir modalWindowBtnFwd">
+                <i class="glyphicon glyphicon-menu-right"></i></button>
+        </div>
+        @* <div class="modalWindowMeta">
+            <form action="../Resources/image-form-handler.php" method="post" enctype="multipart/form-data" id="img-submit">
+                <label class="hideOnEdit"><span>IMG-FILE</span><input class="inputImg" type="file" name="src" accept=".jpg,.png"></label>
+                <label><span>TITLE</span><input type="text" name="title" maxlength="128"></label>
+                <label><span>ALT</span><input type="text" name="alt" maxlength="128"></label>
+                <label><span>AUTHOR</span><input type="text" name="author" maxlength="128"></label>
+                <label><span>CITE</span><input type="text" name="cite" maxlength="2048" placeholder="www.example.com"></label>
+                <label><span>DATE</span><input type="text" name="date" maxlength="128" placeholder="YYYY-MM-DD"></label>
+                <label class="labelID"><span>ID</span><input type="number" name="id" min="0" step="1" readonly></label>
+                <div class="submitBtns">
+                    <input type="submit" name="submit" class="submit submitDelete formSubmit">
+                    <input type="submit" name="submit" class="submit submitChange formSubmit">
+                </div>
+            </form>
+        </div> 
+    </div>
+</div>  *@
