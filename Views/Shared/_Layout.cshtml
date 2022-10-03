@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CarlsCars.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CarlsCars.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", false)
 </head>
 <body>
     <header>
@@ -27,6 +28,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Inventory">Inventory</a>
                         </li>
                     </ul>
                 </div>

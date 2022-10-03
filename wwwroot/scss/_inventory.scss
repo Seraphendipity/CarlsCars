@@ -1,0 +1,39 @@
+.inventory {
+margin: auto;
+
+}
+
+.inventory-item {
+    display: inline-block;
+    position: relative;
+    border: 2px solid #444;
+    border-radius: 1em;
+    margin: 10px 10px;
+    width: 25em;
+    height: 30em;
+}
+
+.inventory-item-data {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.inventory-item-data-header {
+    font-size: 1.5rem;
+}
+
+.inventory-item-data-price{
+    display: inline-block;
+    width: 70%;
+}
+
+.inventory-item-data-price-msrp {
+    font-size: 0.6rem;
+    color: #444;
+}
+
+.inventory-item-data-finance {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: auto;
+}

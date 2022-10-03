@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Cars;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+//dotnet-aspnet-codegenerator controller -name HomeController -m Car -dc CarContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+    
+// builder.Services.AddDbContext<Cars>(options =>
+//     options.UseSqlite(builder.Configuration.GetConnectionString("CarContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

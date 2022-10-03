@@ -1,17 +1,40 @@
 @using Cars
 @model Car
 
-<span>
-    <p>
-        @Model.Make
-    </p>
-    <p>
-        @Model.Model
-    </p>
-    <p>
-        @Model.Model
-    </p>
-    <p>
-        @Model.ListedDate
-    </p>
-</span>
+@* @section Styles {
+     <link href="@Url.Content("~/Styles/view_specific_style.css")" rel="stylesheet" type="text/css" /> 
+     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" /> 
+    <link rel="stylesheet" type="text/css" href="~/css/home.css" asp-append-version="true" />
+} 
+1. Including in _Layout.cshtml
+2. Including in individual sheet as above?
+3. Including in Inventory.cshtml.css?
+4. Including in Home.css (inherits home or no?)
+*@
+
+@{
+    double MonthlyRate = Math.Round((double) Model.Price/Finance.MonthsAlloted);
+}
+
+<div class="inventory-item">
+    <div class="inventory-item-image">
+        @* <img src=@Model.ImageSrc/> *@
+    </div>
+    <div class="inventory-item-data">
+        <div class="inventory-item-data-header">
+            @Model.Year @Model.Make @Model.Model
+        </div>
+        <div class="inventory-item-data-price">
+            $@Model.Price
+            <div class="inventory-item-data-price-msrp">
+                $@Model.Msrp MSRP
+            </div>
+        </div>
+        <div class="inventory-item-data-finance">
+            $@MonthlyRate/mo
+            <div class="inventory-item-data-finance-apr">
+                @Finance.Apr% APR
+            </div>
+        </div>
+    </div>
+</div>
