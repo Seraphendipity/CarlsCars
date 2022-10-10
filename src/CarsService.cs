@@ -1,4 +1,4 @@
-namespace Cars {
+namespace CC {
     public static class CarsService {
         public static Cars GetAllCars () {
             Cars cars = new Cars();

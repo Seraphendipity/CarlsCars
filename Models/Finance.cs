@@ -1,4 +1,4 @@
-namespace Cars
+namespace CC
 {
     public static class Finance {
         public static int MonthsAlloted = 12;

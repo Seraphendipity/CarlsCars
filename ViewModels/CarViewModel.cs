@@ -1,4 +1,4 @@
-namespace Cars {
+namespace CC {
     public class CarViewModel {
         public Cars Cars;
         //public static Finance Finance;

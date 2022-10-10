@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using CarlsCars.Models;
+using CC; //?
 
-namespace Cars {
+namespace CC {
 
     public class HomeController : Controller
     {

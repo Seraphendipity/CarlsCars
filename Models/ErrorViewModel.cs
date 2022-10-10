@@ -1,4 +1,4 @@
-namespace CarlsCars.Models;
+namespace CC;
 
 public class ErrorViewModel
 {

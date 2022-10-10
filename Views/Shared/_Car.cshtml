@@ -1,4 +1,4 @@
-@using Cars
+@using CC
 @model Car
 
 @* @section Styles {
@@ -14,6 +14,11 @@
 
 @{
     double MonthlyRate = Math.Round((double) Model.Price/Finance.MonthsAlloted);
+
+    Cars AllCars = CarsService.GetAllCars();
+    foreach (Car car in AllCars.CarListing) {
+        @* calculate average *@
+    }
 }
 
 <div class="inventory-item">
