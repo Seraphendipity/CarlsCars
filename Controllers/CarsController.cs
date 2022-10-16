@@ -9,6 +9,7 @@ using CC;
 
 namespace CarlsCars.Controllers
 {
+
     public class CarsController : Controller
     {
         private readonly CarsContext _context;
