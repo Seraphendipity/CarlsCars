@@ -8,11 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 // DBContext Instantiation
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<CarsContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("CarsContext") ?? throw new InvalidOperationException("Connection string 'CarsContext' not found.")));
     
- builder.Services.AddDbContext<CarsContext>(options =>
-      options.UseSqlite(builder.Configuration.GetConnectionString("CarContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
