@@ -16,7 +16,19 @@ namespace CarlsCars.Controllers
 
         public CarsController(CarsContext context)
         {
+            // DISCUSS: Public to Private Context
+            // Why go through this effort to use a private variable?
             _context = context;
+        }
+
+        // GET: Cars/Inventory
+        // DISCUSS: Grouping Suggestions (is this correct?)
+        public async Task<ActionResult> Inventory() {
+            // Cars model = ;
+            // DISCUSS: hmm...DI here?
+            Cars cars = new Cars();
+            cars.CarListing = await _context.Car.ToListAsync();
+            return View(cars); // Implicit View("Inventory") as well due to same name.
         }
 
         // GET: Cars
@@ -26,7 +38,7 @@ namespace CarlsCars.Controllers
         }
 
         // GET: Cars/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null || _context.Car == null)
             {
@@ -66,7 +78,7 @@ namespace CarlsCars.Controllers
         }
 
         // GET: Cars/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int id)
         {
             if (id == null || _context.Car == null)
             {
@@ -86,7 +98,7 @@ namespace CarlsCars.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Make,Model,Year,Price,Msrp,ListedDate")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,Year,Price,Msrp,ListedDate")] Car car)
         {
             if (id != car.Id)
             {
@@ -117,7 +129,7 @@ namespace CarlsCars.Controllers
         }
 
         // GET: Cars/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null || _context.Car == null)
             {
@@ -137,7 +149,7 @@ namespace CarlsCars.Controllers
         // POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Car == null)
             {
@@ -153,7 +165,7 @@ namespace CarlsCars.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CarExists(string id)
+        private bool CarExists(int id)
         {
           return _context.Car.Any(e => e.Id == id);
         }

@@ -13,7 +13,7 @@ namespace CarlsCars.Migrations
                 name: "Car",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false),
                     Make = table.Column<string>(type: "TEXT", nullable: true),
                     Model = table.Column<string>(type: "TEXT", nullable: true),
                     Year = table.Column<int>(type: "INTEGER", nullable: false),

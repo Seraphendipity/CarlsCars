@@ -23,10 +23,6 @@ namespace CC {
             return View();
         }
 
-        public ActionResult Inventory() {
-            Cars model = CarsService.GetAllCars();
-            return View(model); // Implicit View("Inventory") as well due to same name.
-        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

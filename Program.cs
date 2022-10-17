@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using CC;
 
 
 // CLI for Scaffolding (auto code gen) and Context Creation (CarsContext) 
@@ -17,6 +18,15 @@ builder.Services.AddDbContext<CarsContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    InitializationSeed.Initialize(services, true);
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

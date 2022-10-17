@@ -20,8 +20,8 @@ namespace CarlsCars.Migrations
 
             modelBuilder.Entity("CC.Car", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("ListedDate")
                         .HasColumnType("TEXT");
